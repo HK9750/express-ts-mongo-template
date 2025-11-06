@@ -34,3 +34,6 @@ export interface GetAggregatedPaginationQueryParams {
   page?: number
   limit?: number
 }
+
+
+export type MulterFilesMap = { [fieldname: string]: Express.Multer.File[] };
