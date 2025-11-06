@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose, { type ConnectOptions } from 'mongoose'
 import { env } from './env'
 import { logger } from '../utils/helpers'
 
@@ -7,7 +7,7 @@ export const connectDatabase = async () => {
   await mongoose.connect(env.mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  } as mongoose.ConnectOptions).then(() => {
+  } as ConnectOptions).then(() => {
     logger.info('Connected to MongoDB', 'Database')
   }).catch((error) => {
     logger.error(`MongoDB connection error: ${error}`, 'Database')
