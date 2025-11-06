@@ -50,7 +50,7 @@ const server = createServer(app)
 const start = async () => {
   try {
 
-    await connectDatabase()
+    connectDatabase()
     initializeSocketIO(server)
 
     server.listen(env.port, () => {
